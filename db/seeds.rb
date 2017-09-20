@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require "csv"
+
+CSV.foreach('db/dayStack.csv', headers: true) do |row|
+  Stack.create(:code => row[0], :company => row[1], :stock_price => row[2])
+end
