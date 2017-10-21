@@ -19,9 +19,17 @@ ActiveRecord::Schema.define(version: 20170920045700) do
   create_table "stacks", force: :cascade do |t|
     t.integer  "code"
     t.string   "company"
+    t.string   "market"
+    t.string   "sector"
+    t.string   "market_price"
+    t.string   "issued_stocks"
     t.integer  "stock_price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "dividend"
+    t.float    "industry_per"
+    t.string   "eps"
+    t.string   "bpr"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

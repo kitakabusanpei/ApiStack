@@ -9,5 +9,15 @@
 require "csv"
 
 CSV.foreach('db/dayStack.csv', headers: true) do |row|
-  Stack.create(:code => row[0], :company => row[1], :stock_price => row[2])
+  Stack.create(:code => row[0],
+               :company => row[1],
+               :market => row[2],
+               :sector => row[3],
+               :market_price => row[4],
+               :issued_stocks => row[5],
+               :stock_price => row[6],
+               :industry_per => row[7],
+               :eps => row[8],
+               :bpr => row[9],
+               :dividend => row[10])
 end
