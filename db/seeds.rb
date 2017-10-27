@@ -13,11 +13,11 @@ CSV.foreach('db/dayStack.csv', headers: true) do |row|
                :company => row[1],
                :market => row[2],
                :sector => row[3],
-               :market_price => row[4],
-               :issued_stocks => row[5],
+               :market_price => row[4] == "-" ? 0 : row[4].to_i,
+               :issued_stocks => row[5] == "-" ? 0 : row[5].to_i,
                :stock_price => row[6],
-               :industry_per => row[7],
-               :eps => row[8],
-               :bpr => row[9],
-               :dividend => row[10])
+               :dividend => row[7] == "-" ? 0.00 : row[7].to_f,
+               :industry_per => row[8],
+               :eps => row[9] == "-" ? 0.00 : row[9].to_f,
+               :bps => row[10] == "-" ? 0.00 : row[10].to_f)
 end

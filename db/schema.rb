@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20170920045700) do
     t.string   "dividend"
     t.float    "industry_per"
     t.string   "eps"
-    t.string   "bpr"
+    t.string   "bps"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
